@@ -1,13 +1,11 @@
 package Multithreading.RunnableImpl;
 
 
-import Multithreading.RunnableImpl.ABC;
-
 public class Client {
     public static void main(String[] args) {
         System.out.println("Thread : " + Thread.currentThread().getName());
 
-        ABC x = new ABC();
+        MultithreadingLearning x = new MultithreadingLearning();
 
         Thread t = new Thread(() -> System.out.println("Lambda : " + Thread.currentThread().getName()));
 
@@ -17,7 +15,7 @@ public class Client {
                 System.out.println("Runnable : " + Thread.currentThread().getName());
             }
         };
-//        Thread t2=new Thread();
+//        Thread t2=new Thread(x);
         Thread t2 = new Thread(r);
 
         t.start();
